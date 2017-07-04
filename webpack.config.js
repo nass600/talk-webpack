@@ -1,5 +1,8 @@
 const webpack = require('webpack');
 const ExtractPlugin = require('extract-text-webpack-plugin');
+const DashboardPlugin = require('webpack-dashboard/plugin');
+const path = require('path');
+const buildPath = path.join(__dirname, './');
 
 module.exports = {
   entry: [
@@ -32,6 +35,18 @@ module.exports = {
       minify: true,
       comments: false
     }),
-    new ExtractPlugin('./dist/bundle.css')
-  ]
+    new webpack.HotModuleReplacementPlugin(),
+    new ExtractPlugin('./dist/bundle.css'),
+    new DashboardPlugin()
+  ],
+  devServer: {
+    contentBase: buildPath,
+    port: 3000,
+    host: '0.0.0.0',
+    disableHostCheck: true,
+    watchOptions: {
+      aggregateTimeout: 300,
+      poll: 500
+    }
+  }
 };

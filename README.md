@@ -12,7 +12,7 @@ with [webpack](https://webpack.js.org/).
 - [x] Loaders: Modular ES2015 Javascript app
 - [x] Loaders: Modular styles
 - [x] Plugins: Optimizing assets for production
-- [ ] Optimizing development with dev server + hot reload
+- [x] Optimizing development with dev server + hot reload
 
 ## Author
 
