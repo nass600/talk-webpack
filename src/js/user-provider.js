@@ -1,33 +1,27 @@
 import $ from 'jquery';
 import AlbumProvider from './album-provider'
 
-var UserProvider = (function () {
-
-  var all = function () {
+const UserProvider = {
+  all: () => {
     return $.ajax({
       url: 'https://jsonplaceholder.typicode.com/users'
     });
-  };
+  },
 
-  var findOne = function (id) {
-    var deferred = $.Deferred();
+  findOne: (id) => {
+    let deferred = $.Deferred();
 
-    var getUser = $.ajax({
+    let getUser = $.ajax({
       url: 'https://jsonplaceholder.typicode.com/users/' + id
     });
 
-    return $.when(AlbumProvider.findByUser(id), getUser).then(function (albumsResponse, userResponse) {
-      var user = userResponse[0];
+    return $.when(AlbumProvider.findByUser(id), getUser).then((albumsResponse, userResponse) => {
+      let user = userResponse[0];
       user.albums = albumsResponse[0];
 
       return deferred.resolve(user);
     });
-  };
-
-  return {
-    all: all,
-    findOne: findOne
   }
-})();
+};
 
 export default UserProvider;

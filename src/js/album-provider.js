@@ -1,25 +1,20 @@
 import $ from 'jquery';
 
-var AlbumProvider = (function () {
-  var all = function () {
+const AlbumProvider = {
+  all: () => {
     return $.ajax({
       url: 'https://jsonplaceholder.typicode.com/albums'
     })
-  };
+  },
 
-  var findByUser = function (userId) {
+  findByUser: (userId) => {
     return $.ajax({
       url: 'https://jsonplaceholder.typicode.com/albums',
       data: {
         userId: userId
       }
     });
-  };
-
-  return {
-    all: all,
-    findByUser: findByUser
   }
-})();
+};
 
 export default AlbumProvider;
