@@ -2,6 +2,8 @@ import $ from 'jquery';
 import UserProvider from './user-provider';
 import AlbumProvider from './album-provider';
 
+import '../scss/main.scss';
+
 let renderUsers = ($target) => {
   let template = '<div class="col-6"><div class="card" data-user-id="{{id}}">' +
     '<div class="card-block">' +

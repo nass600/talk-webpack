@@ -10,7 +10,7 @@ with [webpack](https://webpack.js.org/).
 - [x] Javascript app without building process and dependencies management
 - [x] Modular Javascript app with Webpack
 - [x] Loaders: Modular ES2015 Javascript app
-- [ ] Loaders: Modular styles
+- [x] Loaders: Modular styles
 - [ ] Plugins: Optimizing assets for production
 - [ ] Optimizing development with dev server + hot reload
 
