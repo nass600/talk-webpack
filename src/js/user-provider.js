@@ -1,3 +1,6 @@
+import $ from 'jquery';
+import AlbumProvider from './album-provider'
+
 var UserProvider = (function () {
 
   var all = function () {
@@ -27,3 +30,4 @@ var UserProvider = (function () {
   }
 })();
 
+export default UserProvider;

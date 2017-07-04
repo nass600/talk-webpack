@@ -1,3 +1,7 @@
+import $ from 'jquery';
+import UserProvider from './user-provider';
+import AlbumProvider from './album-provider';
+
 var renderUsers = function ($target) {
   var template = '<div class="col-6"><div class="card" data-user-id="{{id}}">' +
     '<div class="card-block">' +

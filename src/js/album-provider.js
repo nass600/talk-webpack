@@ -1,3 +1,5 @@
+import $ from 'jquery';
+
 var AlbumProvider = (function () {
   var all = function () {
     return $.ajax({
@@ -19,3 +21,5 @@ var AlbumProvider = (function () {
     findByUser: findByUser
   }
 })();
+
+export default AlbumProvider;
